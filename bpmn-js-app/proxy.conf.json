@@ -1,0 +1,6 @@
+{
+  "/service": {
+    "target": "http://10.20.0.206:8091/flowable-rest/",
+    "secure": false
+  }
+}

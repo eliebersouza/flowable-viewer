@@ -1,13 +1,18 @@
-<h1>Add bpmn-js to Angular</h1>
+<h1>Exemplo renderização Diagrama de Fluxo de trabalho - Flowable</h1>
+<label>Selecione um modelo</label>
+<div class="form-group" *ngIf="models.length">
+  <label for="my-select">Text</label>
+  <select id="my-select" class="form-control" (change)="changeModel($event.target.value)">
+    <option [value]="null">Selecione um Repositorio</option>
+    <option *ngFor="let model of models" [value]="model.id">{{model.name}}</option>
+  </select>
 
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a tincidunt dolor. Nam semper est ut mauris cursus, vel laoreet nunc vehicula. Mauris nec semper ipsum. Integer feugiat mi at elementum fringilla. Nunc malesuada ante sed ligula pretium, eu lobortis lorem rhoncus. Praesent et ipsum ante. Aliquam est mi, ultrices ut neque eget, mollis pulvinar sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam auctor porta sapien in venenatis.
-</p>
+  <select id="my-select" class="form-control" (change)="changeResource($event.target.value)">
+    <option [value]="null">Selecione um Modelo</option>
 
-<p>
-  In fringilla suscipit odio quis tincidunt. Morbi felis elit, blandit a volutpat eget, rutrum ut mi. Duis ac orci at nibh semper vehicula. Quisque vulputate, nibh vitae laoreet convallis, urna erat imperdiet eros, et interdum arcu arcu ac risus. Maecenas in tellus nisi. Mauris quis lectus luctus, condimentum orci eu, rhoncus sapien. Aliquam at lobortis mauris, eget facilisis arcu. Quisque metus purus, rhoncus et tortor id, ornare maximus neque. Donec et ex tincidunt, malesuada lacus in, volutpat eros. Cras nisi arcu, dapibus quis odio sit amet, placerat blandit elit. Nullam at dictum mauris. Nulla feugiat elit ex, a pulvinar velit faucibus a. Nulla tincidunt velit purus, in faucibus ligula ornare venenatis.
-</p>
-
+    <option *ngFor="let resource of resources" [value]="resource.id">{{resource.id}}</option>
+  </select>
+</div>
 <div class="diagram-parent">
   <app-diagram [url]="diagramUrl" (importDone)="handleImported($event)"></app-diagram>
 
@@ -16,15 +21,3 @@
     {{ importError.message }}
   </div>
 </div>
-
-<p>
-  Ut vestibulum, magna at molestie tempus, enim sem molestie est, vel tincidunt orci leo vel sapien. Vivamus convallis, purus in rhoncus ultricies, mauris sapien condimentum sapien, vel porta urna est eu leo. Nam dui erat, venenatis at metus ut, rutrum rutrum lacus. Fusce non eros vehicula, aliquet nibh vitae, bibendum dolor. Sed hendrerit lectus ex. Mauris id venenatis metus. In hac habitasse platea dictumst.
-</p>
-
-<p>
-  Etiam molestie, erat eget tincidunt rutrum, nulla odio pulvinar nibh, in pulvinar felis mauris a nunc. Sed eu ullamcorper ex, id tincidunt metus. Quisque lectus enim, vehicula eget aliquam sit amet, semper ut nisl. Vivamus ultrices, cras odio massa, sagittis in luctus sed, mattis eu massa. Nam erat nibh, pulvinar vel hendrerit quis, ultricies eu sapien. Integer fringilla sapien ex, et posuere arcu euismod et.
-</p>
-
-<p>
-  Suspendisse potenti. In ut lorem vitae dolor molestie commodo. Vivamus mattis gravida metus, porttitor ornare augue lacinia suscipit. Duis condimentum fringilla nisl, non consequat odio mollis id. Nulla tincidunt interdum elit, sed tristique ex laoreet lobortis. Suspendisse in felis vitae magna convallis semper. Nullam odio risus, venenatis eget erat ac, pretium aliquet urna. Duis luctus lobortis maximus.
-</p>

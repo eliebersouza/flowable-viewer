@@ -21,7 +21,7 @@ import { catchError } from 'rxjs/operators';
  *                to navigate them
  * bpmn-modeler - bootstraps a full-fledged BPMN editor
  */
-import * as BpmnJS from 'bpmn-js/dist/bpmn-modeler.production.min.js';
+import * as BpmnJS from 'bpmn-js/dist/bpmn-viewer.production.min.js';
 
 import { importDiagram } from './rx';
 
